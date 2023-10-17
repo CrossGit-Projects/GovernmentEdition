@@ -1,17 +1,21 @@
 package org.example.model;
 
-import javax.persistence.Entity;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @Entity
 public class PoliticalParty {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;
 
@@ -25,6 +29,6 @@ public class PoliticalParty {
 
     private String actualRating;
 
-    private BigDecimal votes;
+    private Double votes;
 
 }
